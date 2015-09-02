@@ -1,9 +1,11 @@
+#!/usr/bin/env node
+
 var program = require('commander');
 var fs = require('fs-extra');
 var hp = require('./lib/http-proxy.js');
 
 program
-  .version(fs.readJsonSync('./package.json').version)
+  .version(fs.readJsonSync(__dirname + '/package.json').version)
   .option('-p, --port <n>', 'listen port')
   .parse(process.argv);
 
